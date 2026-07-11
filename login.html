@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+    <style>
+        :root {
+            --bg-color: #121214;
+            --card-bg: #1a1a1e;
+            --text-main: #ffffff;
+            --text-muted: #87868b;
+            --accent: #4f46e5;
+            --accent-hover: #4338ca;
+            --input-border: #333238;
+            --input-focus: #6366f1;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+        h2 { font-size: 1.6rem; margin-bottom: 0.5rem; font-weight: 600; text-align: center; }
+        p { color: var(--text-muted); text-align: center; margin-bottom: 2rem; font-size: 0.9rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        label { display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; }
+        input {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: #121214;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            color: white;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        input:focus { outline: none; border-color: var(--input-focus); box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2); }
+        button {
+            width: 100%;
+            padding: 0.85rem;
+            background-color: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            margin-top: 0.5rem;
+        }
+        button:hover { background-color: var(--accent-hover); }
+        .footer-link { display: block; text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 0.85rem; text-decoration: none; }
+        .footer-link:hover { color: var(--text-main); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Zaloguj się</h2>
+        <p>Wprowadź swoje dane, aby kontynuować.</p>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="login">LOGIN</label>
+                <input type="text" id="login" name="login" required>
+            </div>
+            <div class="form-group">
+                <label for="haslo">HASŁO</label>
+                <input type="password" id="haslo" name="haslo" required>
+            </div>
+            <button type="submit">Zaloguj się</button>
+        </form>
+        <a href="/" class="footer-link">Powrót do menu</a>
+    </div>
+</body>
+</html>
